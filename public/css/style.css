@@ -9,6 +9,8 @@ html, body {
 	width:100%;
 	height:100%;
 	border:none;
+	background-color: #121212;
+	color: #e0e0e0;
 }
 
 table {
@@ -29,15 +31,17 @@ p {
 
 .smallgreytext{
 	font-size : 10px;
-	color:grey;
+	color: #888;
 }
 
 .smalltableheadertext{
 	font-size : 12px;
+	color: #b0b0b0;
 }
 
 .smalltabletext{
 	font-size : 12px;
+	color: #e0e0e0;
 }
 
 .alignright{
@@ -53,7 +57,7 @@ p {
 	position: absolute;
 	width:100%;
 	height:100%;
-	background-color:rgba(0, 0, 0, 0.5);
+	background-color:rgba(0, 0, 0, 0.7);
 	z-index: 10;
 	display:none;
 }
@@ -73,9 +77,9 @@ p {
 		
 .greyrounded {
 	text-align:left;
-	background-color: #eeeeff;
+	background-color: #1e1e2e;
   	border-radius: 8px;
-  	border-color: #2222ff;
+  	border-color: #6c5ce7;
 	padding:0px;
 	margin:0px;
 	width:100%;
@@ -86,9 +90,9 @@ p {
 	padding:8px;
 }
 
-.buyorder{background-color: #aaffaa;} 
-.sellorder{background-color: #ffaaaa;} 
-.otherorder{background-color: #bbbbff;} 
+.buyorder{background-color: #1a4d1a;} 
+.sellorder{background-color: #4d1a1a;} 
+.otherorder{background-color: #1a1a4d;} 
 
 .chatroom{
 	padding:4px;
@@ -96,81 +100,158 @@ p {
 	border-radius: 8px;
 	height:200px;
 	overflow-y: auto;
-	background:white;
+	background:#252540;
 	text-align:left;
 }
 
 /* Normal buttons */
 .mybtn {
-  background-color: DodgerBlue; /* Blue background */
-  border: none; /* Remove borders */
+  background-color: #6c5ce7;
+  border: none;
   border-radius: 4px;
-  color: white; /* White text */
-  padding: 6px 8px; /* Some padding */
-  font-size: 12px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  color: white;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
   min-width:60px;
 }
 
-/* Darker background on mouse-over */
 .mybtn:hover {
-  background-color: RoyalBlue;
+  background-color: #5b4cdb;
 }
 
 .mybtn:active {
-  background-color: red;
+  background-color: #4839a8;
 }
 
 .mybtn:disabled {
-  background-color: grey;
+  background-color: #404040;
+}
+
+/* BUY/SELL Buttons with gradients */
+#id_createorder_buy {
+	background: linear-gradient(135deg, #00b894, #00a085);
+	border: none;
+}
+
+#id_createorder_buy:hover {
+	background: linear-gradient(135deg, #00a885, #009075);
+}
+
+#id_createorder_buy:active {
+	background: linear-gradient(135deg, #009075, #008065);
+}
+
+#id_createorder_sell {
+	background: linear-gradient(135deg, #e74c3c, #c0392b);
+	border: none;
+}
+
+#id_createorder_sell:hover {
+	background: linear-gradient(135deg, #d84333, #b02e22);
+}
+
+#id_createorder_sell:active {
+	background: linear-gradient(135deg, #c0392b, #a52b21);
 }
 
 /* Chart Time buttons */
 .chartbtn {
-  background-color: #DD4D00; /* Blue background */
-  border: none; /* Remove borders */
+  background-color: #e17055;
+  border: none;
   border-radius: 4px;
-  color: white; /* White text */
-  padding: 4px 4px; /* Some padding */
-  font-size: 10px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  color: white;
+  padding: 4px 4px;
+  font-size: 10px;
+  cursor: pointer;
   min-width:40px;
 }
 
-/* Darker background on mouse-over */
 .chartbtn:hover {
-  background-color: #AA2D00;
+  background-color: #d35d43;
 }
 
 .chartbtn:active {
-  background-color: red;
+  background-color: #b84d33;
 }
 
 .chartbtn:disabled {
-  background-color: grey;
+  background-color: #404040;
 }
 
 /* Menu buttons */
 .menubtn {
-  background-color: DodgerBlue; /* Blue background */
-  border: none; /* Remove borders */
+  background: linear-gradient(135deg, #cc4400, #e64a00);
+  border: none;
   border-radius: 4px;
-  color: white; /* White text */
-  padding: 6px 8px; /* Some padding */
-  font-size: 14px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  color: white;
+  padding: 6px 8px;
+  font-size: 14px;
+  cursor: pointer;
   min-width:80px;
 }
 
-/* Darker background on mouse-over */
 .menubtn:hover {
-  background-color: RoyalBlue;
+  background: linear-gradient(135deg, #dd5500, #e64a00);
 }
 
 .menubtn:active {
-  background-color: green;
+  background: linear-gradient(135deg, #b33c00, #994400);
 }
 
 .menubtn:disabled {
-  background-color: RoyalBlue;
+  background: linear-gradient(135deg, #994400, #b33c00);
+}
+
+/* Form inputs and selects */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+	background-color: #252540;
+	color: #e0e0e0;
+	border: 1px solid #404040;
+	border-radius: 4px;
+	padding: 4px 6px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+	border-color: #6c5ce7;
+	outline: none;
+}
+
+input[type="range"] {
+	accent-color: #6c5ce7;
+}
+
+/* Links */
+a {
+	color: #00cec9;
+}
+
+a:hover {
+	color: #00b5b0;
+}
+
+/* Table headers */
+th {
+	color: #b0b0b0;
+	border-bottom: 1px solid #404040;
+	padding: 4px;
+	text-align: left;
+}
+
+/* Table cells */
+td {
+	color: #e0e0e0;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+	accent-color: #6c5ce7;
 }
