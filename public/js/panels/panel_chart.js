@@ -39,7 +39,7 @@ function initPriceChart(){
 	    }]
 	  },
 	  options: {
-        animation: CHART_ANIMATION
+        animation:false
       } 
 	}); 
 }
