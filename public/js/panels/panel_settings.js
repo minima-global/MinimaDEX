@@ -1,6 +1,7 @@
 
 const notifytrade 	= document.getElementById('id_settings_notify_trade');
 const notifychat 	= document.getElementById('id_settings_notify_chat');
+const animatechart 	= document.getElementById('id_settings_animate_chart');
 
 notifytrade.addEventListener('click', () => {
 	USER_SETTINGS.notifytrade = notifytrade.checked;
@@ -18,9 +19,18 @@ notifychat.addEventListener('click', () => {
 	saveUserSettings();
 });
 
+animatechart.addEventListener('click', () => {
+	USER_SETTINGS.animatechart = animatechart.checked;
+	
+	CHART_ANIMATION = USER_SETTINGS.animatechart;
+	
+	saveUserSettings();
+});
+
 function initSettings(){
 	notifytrade.checked 	= USER_SETTINGS.notifytrade;
 	notifychat.checked 		= USER_SETTINGS.notifychat;
+	animatechart.checked 	= USER_SETTINGS.animatechart;
 }
 
 function loadUserSettings(){
@@ -36,6 +46,7 @@ function loadUserSettings(){
 		USER_SETTINGS = {};
 		USER_SETTINGS.notifytrade 	= false;
 		USER_SETTINGS.notifychat 	= false;
+		USER_SETTINGS.animatechart 	= true;
 	}
 	
 	if(typeof(USER_SETTINGS.notifytrade) == "undefined"){
@@ -46,6 +57,11 @@ function loadUserSettings(){
 	if(typeof(USER_SETTINGS.notifychat) == "undefined"){
 		needsave = true;
 		USER_SETTINGS.notifychat = false;
+	}
+	
+	if(typeof(USER_SETTINGS.animatechart) == "undefined"){
+		needsave = true;
+		USER_SETTINGS.animatechart = true;
 	}
 	
 	//Save them..

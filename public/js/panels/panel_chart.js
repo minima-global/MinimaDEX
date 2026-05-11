@@ -22,6 +22,8 @@ var CHART_TIME_WEEK 		= CHART_TIME_DAY * 7;
 
 var CHART_TIMESPAN 			= CHART_TIME_10MINUTES;
 
+var CHART_ANIMATION 		= true;
+
 /**
  * Update the price chart given the current trades and market
  */
@@ -35,7 +37,10 @@ function initPriceChart(){
 	      label: "Price Chart",
 	      data: CURRENT_BARDATA,
 	    }]
-	  }
+	  },
+	  options: {
+        animation: CHART_ANIMATION
+      } 
 	}); 
 }
 
