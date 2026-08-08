@@ -31,16 +31,16 @@ function postURL(server, port, basicauth, url, postData, callback){
 	  //console.log(`STATUS: ${res.statusCode}`);
 	  //console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
 	  res.setEncoding('utf8');
+	  const chunks = [];
 	  res.on('data', (chunk) => {
+		chunks.push(chunk);
+	  });
+	  res.on('end', () => {
 	    try{
-			callback(JSON.parse(chunk));	
+			callback(JSON.parse(chunks.join('')));
 		}catch(err){
 			console.log('Error HTTP : '+err+"  @ "+url+" "+postData);
 		}
-		
-	  });
-	  res.on('end', () => {
-	    //console.log('No more data in response.');
 	  });
 	});
 

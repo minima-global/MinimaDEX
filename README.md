@@ -60,4 +60,12 @@ node server.js -help
 
 You can set the port, trades file etc..
 
+## Tests
+
+Run the Node.js regression tests with:
+
+```bash
+npm test
+```
+
 ENJOY!
